@@ -21,7 +21,7 @@ const Shop = () => {
 
     const hanlderLogout = () => {
         localStorage.removeItem('token')
-        window.location.reload()
+        navigate('/login')
     }
 
     useEffect(() => {
