@@ -19,6 +19,11 @@ const Shop = () => {
         setSearchValue(s)
     }
 
+    const hanlderLogout = () => {
+        localStorage.removeItem('token')
+        window.location.reload()
+    }
+
     useEffect(() => {
         dispatch(setProductThunk(currentCategory))
         dispatch(setCategoriesThunk())
@@ -36,7 +41,8 @@ const Shop = () => {
 
     return (
         <div>
-            <h1>Esta es mi tienda</h1>
+            <button onClick={() => hanlderLogout()} >Logout</button>
+            <h1>This is my shop</h1>
             <Search handlerSearch={handlerSearchValue} />
             <button onClick={() => navigate('/cart')} >Cart</button>
             <br />

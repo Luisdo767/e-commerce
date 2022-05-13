@@ -27,6 +27,15 @@ const Product = () => {
 
 
   useEffect(() => {
+      const body = document.querySelector('#root');
+
+      body.scrollIntoView({
+          behavior: 'smooth'
+      }, 500)
+
+  }, []);
+
+  useEffect(() => {
     if (quantity && confirm){
       addProductToCart({
         product: id,

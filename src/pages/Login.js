@@ -20,7 +20,7 @@ const Login = () => {
                     localStorage.setItem('token',res.access)
                 })
                 .then(() => {
-                    navigate('/shop')
+                    navigate('/')
                 })
         }
         
@@ -28,13 +28,25 @@ const Login = () => {
 
   return (
     <div>
+        <h1>Login</h1>
+        <div>
+            <h2>Test data:</h2>
+            <h4>Email: admin@admin.com</h4>
+            <h4>Password: root</h4>
+        </div>
+        <br />
         <form onSubmit={handleSubmit(onSubmit)}>
             <label htmlFor="email">Email</label>
             <input id='email' placeholder="example@example.com" type="email" required='required' {...register('email')} />
+            <br />
             <label htmlFor="password">Password</label>
             <input id="password" placeholder="Your password" type="password" required='required' {...register('password')} />
+            <br />
             <input id='submit' type="submit" value='Submit' />
         </form>
+        <br />
+        <h3>Don`t have an account?</h3>
+        <button onClick={() => navigate('/signup')} >Signup</button>
     </div>
   )
 }

@@ -7,6 +7,7 @@ import ProtectedPages from './pages/ProtectedPages';
 import Cart from './pages/Cart';
 import WelcomePage from './pages/WelcomePage';
 import Purchased from './pages/Purchased';
+import Signup from './pages/Signup';
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
       <Routes>
         {/*Rutas Publicas*/}
         <Route path='/login' element={<Login />} />
-        <Route path='/signup'  />
+        <Route path='/signup' element={<Signup/>} />
         {/*Rutas Privadas*/}
         <Route element={<ProtectedPages />} >
           <Route path='/' element={<WelcomePage/>} />

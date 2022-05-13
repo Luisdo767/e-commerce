@@ -14,7 +14,7 @@ export const loginUser = async (data) => {
 }
 
 export const createUser = async (data) => {
-    const req = await axios.post(`${URL}/login/`, data)
+    const req = await axios.post(`${URL}/users/`, data)
     return req.data
 }
 
