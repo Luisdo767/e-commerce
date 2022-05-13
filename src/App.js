@@ -5,6 +5,8 @@ import Shop from './pages/Shop';
 import Product from './pages/Product';
 import ProtectedPages from './pages/ProtectedPages';
 import Cart from './pages/Cart';
+import WelcomePage from './pages/WelcomePage';
+import Purchased from './pages/Purchased';
 
 function App() {
   return (
@@ -15,11 +17,11 @@ function App() {
         <Route path='/signup'  />
         {/*Rutas Privadas*/}
         <Route element={<ProtectedPages />} >
-          <Route path='/' element={<h1>Inicio</h1>} />
+          <Route path='/' element={<WelcomePage/>} />
           <Route path='/shop' element={<Shop />} />
           <Route path='/shop/:id' element={<Product />} />
           <Route path='/cart' element={<Cart/>} />
-          <Route path='/cart/succes' element={<h1>Gracias por tu compra</h1>} />
+          <Route path='/cart/succes' element={<Purchased/>} />
         </Route>
       </Routes>
     </div>
